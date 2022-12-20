@@ -20,6 +20,7 @@
 
             <thead>
                 <tr>
+                  <th scope="col">ID</th>
                   <th scope="col">Titre de la tache</th>
                   <th scope="col">Action</th>
                 </tr>
@@ -28,9 +29,9 @@
                     <% tasks.forEach((task, idx) => { %>
                             <tr>
                                 <% if (!task.done) { %>
-                                    <td><%= task.title %> </td><td><a href="/task/<%= idx %>/done"> <button class="btn btn-danger">Terminé</button> </a></td>
+                                <td><%= idx %></td><td><%= task.title %> </td><td><a href="/task/<%= idx %>/done"> <button class="btn btn-danger">Terminé</button> </a></td>
                                 <% } else { %>
-                                <td><s><%= task.title %></s></td><td><a href="/task/<%= idx %>/delete"> <button class="btn btn-success">Supprimé</button> </a></td>
+                                <td><%= idx %></td><td><s><%= task.title %></s></td><td><a href="/task/<%= idx %>/delete"> <button class="btn btn-success">Supprimé</button> </a></td>
                                 <% } %>
                             </tr>
                     <% }) %>
